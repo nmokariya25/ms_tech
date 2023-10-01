@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using Training_MS_Mono.Models;
+using Training_MS_Micro.Models;
 
-namespace Training_MS_Mono.Controllers
+namespace Training_MS_Micro.Controllers
 {
     [ApiController]
     public class DemandItemController : ControllerBase
     {
-        private readonly IAFLogisticsContext _context;
+        private readonly DemandDbContext _context;
 
-        public DemandItemController(IAFLogisticsContext context)
+        public DemandItemController(DemandDbContext context)
         {
             _context = context;
         }
@@ -56,7 +55,7 @@ namespace Training_MS_Mono.Controllers
         [Route("demands")]
         public ActionResult DeleteDemandItem(int id)
         {
-            var demandItem = _context.DemandItems.FirstOrDefault(s=>s.Id == id);
+            var demandItem = _context.DemandItems.FirstOrDefault(s => s.Id == id);
             _context.DemandItems.Remove(demandItem);
             var result = _context.SaveChangesAsync();
             return Ok("DemandItem has been deleted successfully..!!");
