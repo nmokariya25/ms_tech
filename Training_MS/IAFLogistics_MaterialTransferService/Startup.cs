@@ -22,6 +22,11 @@ namespace IAFLogistics_MaterialTransferService
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

@@ -22,6 +22,11 @@ namespace Training_MS_Micro
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

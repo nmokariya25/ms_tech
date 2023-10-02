@@ -24,6 +24,11 @@ namespace Training_MS_Mono
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {   
+                endpoints.MapControllers();
+            });
         }
     }
 }

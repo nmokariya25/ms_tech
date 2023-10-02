@@ -14,16 +14,9 @@ namespace IAFLogistic_DemandManagementService.Controllers
             _context = context;
         }
 
-        //[HttpGet]
-        //[Route("api/demands")]
-        //public ActionResult<List<DemandItem>> Get()
-        //{
-        //    return Ok(_context.DemandItems.ToList());
-        //}
-
         [HttpGet]
         [Route("demands")]
-        public async Task<IActionResult> Get()
+        public ActionResult<List<DemandItem>> Get()
         {
             return Ok(_context.DemandItems.ToList());
         }

@@ -22,6 +22,11 @@ namespace IAFLogistic_DemandManagementService
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
