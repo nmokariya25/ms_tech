@@ -21,13 +21,6 @@ namespace IAFLogistic_DemandManagementService.Controllers
             return Ok(_context.DemandItems.ToList());
         }
 
-        [HttpGet]
-        [Route("demands/{id}")]
-        public ActionResult<DemandItem> GetDemandItemById(int id)
-        {
-            return Ok(_context.DemandItems.FirstOrDefault(s => s.Id == id));
-        }
-
         [HttpPost]
         [Route("demands")]
         public ActionResult InsertDemandItem([FromBody] DemandItem item)

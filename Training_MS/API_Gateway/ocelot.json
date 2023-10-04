@@ -1,0 +1,55 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5003"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/demands",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/demands",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5282
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/demands/{Id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/demands/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5282
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/materials",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/materials",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5233
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/materials/{itemName}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/materials/{itemName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5233
+        }
+      ]
+    }
+  ]
+}

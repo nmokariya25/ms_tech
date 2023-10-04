@@ -34,13 +34,6 @@ namespace IAFLogistics_MaterialTransferService.Controllers
             return Ok(_context.MaterialTransfers.ToList());
         }
 
-        //[HttpGet]
-        //[Route("materials/{id}")]
-        //public ActionResult<MaterialTransfer> GetTransferRequestById(int id)
-        //{
-        //    return Ok(_context.MaterialTransfers.FirstOrDefault(s => s.Id == id));
-        //}
-
         [HttpPost]
         [Route("materials")]
         public ActionResult InsertTransferRequest(MaterialTransfer item)
