@@ -1,13 +1,21 @@
 {
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5003"
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul"
+    }
   },
   "Routes": [
     {
+      "UseServiceDiscovery": true,
       "UpstreamPathTemplate": "/gateway/demands",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/demands",
       "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -16,10 +24,14 @@
       ]
     },
     {
+      "UseServiceDiscovery": true,
       "UpstreamPathTemplate": "/gateway/demands/{Id}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/demands/{Id}",
       "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -28,10 +40,14 @@
       ]
     },
     {
+      "UseServiceDiscovery": true,
       "UpstreamPathTemplate": "/gateway/materials",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/materials",
       "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -40,10 +56,14 @@
       ]
     },
     {
+      "UseServiceDiscovery": true,
       "UpstreamPathTemplate": "/gateway/materials/{itemName}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/materials/{itemName}",
       "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",

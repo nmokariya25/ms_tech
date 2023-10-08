@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IAFLogistic_DemandManagemen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IAFLogistics_MaterialTransferService", "IAFLogistics_MaterialTransferService\IAFLogistics_MaterialTransferService.csproj", "{2FB0366A-B3AE-4C95-AECF-32827BAA1F99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Gateway", "API_Gateway\API_Gateway.csproj", "{B8A1ACD0-AEC2-467D-BCAC-EEBB6E5D4805}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_Gateway", "API_Gateway\API_Gateway.csproj", "{B8A1ACD0-AEC2-467D-BCAC-EEBB6E5D4805}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consul_Impl", "Consul_Impl\Consul_Impl.csproj", "{B92130EB-6821-4933-A03A-9000F44E2762}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B8A1ACD0-AEC2-467D-BCAC-EEBB6E5D4805}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A1ACD0-AEC2-467D-BCAC-EEBB6E5D4805}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A1ACD0-AEC2-467D-BCAC-EEBB6E5D4805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B92130EB-6821-4933-A03A-9000F44E2762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B92130EB-6821-4933-A03A-9000F44E2762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B92130EB-6821-4933-A03A-9000F44E2762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B92130EB-6821-4933-A03A-9000F44E2762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
