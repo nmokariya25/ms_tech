@@ -38,11 +38,11 @@ namespace Consul_Impl.Extensions
             //var uri = new Uri(address);
             var registration = new AgentServiceRegistration()
             {
-                ID = $"MSTraining_API", //{uri.Port}",
+                ID = $"MSTraining_Demand_API", //{uri.Port}",
                 // servie name  
-                Name = "WebApplication1",
+                Name = "IAF_DemandManagement_Service",
                 Address = "localhost", //$"{uri.Host}",
-                Port = 5003  // uri.Port
+                Port = 5282  // uri.Port
             };
 
             logger.LogInformation("Registering with Consul");
