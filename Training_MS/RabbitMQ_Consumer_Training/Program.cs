@@ -18,7 +18,7 @@ var consumer = new EventingBasicConsumer(channel);
 consumer.Received += (model, eventArgs) => {
     var body = eventArgs.Body.ToArray();
     var message = Encoding.UTF8.GetString(body);
-    Console.WriteLine($"Product message received: {message}");
+    Console.WriteLine($"Item message received: {message}");
 };
 //read the message
 channel.BasicConsume(queue: "training_demo", autoAck: true, consumer: consumer);
