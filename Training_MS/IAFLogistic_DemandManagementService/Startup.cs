@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using IAFLogistic_DemandManagementService.MQ;
+using Microsoft.EntityFrameworkCore;
 
 namespace IAFLogistic_DemandManagementService
 {
@@ -14,6 +15,7 @@ namespace IAFLogistic_DemandManagementService
         {
             services.AddControllers();
             services.AddDbContext<DemandServiceDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DemandServiceDatabase")));
+            services.AddScoped<IRabitMQProducer, RabitMQProducer>();
             services.AddSwaggerGen();
         }
 

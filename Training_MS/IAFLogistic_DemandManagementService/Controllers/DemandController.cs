@@ -1,4 +1,5 @@
 ﻿using IAFLogistic_DemandManagementService.Models;
+using IAFLogistic_DemandManagementService.MQ;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -8,10 +9,12 @@ namespace IAFLogistic_DemandManagementService.Controllers
     public class DemandController : ControllerBase
     {
         private readonly DemandServiceDbContext _context;
+        private readonly IRabitMQProducer _rabitMQProducer;
 
-        public DemandController(DemandServiceDbContext context)
+        public DemandController(DemandServiceDbContext context, IRabitMQProducer rabitMQProducer)
         {
             _context = context;
+            _rabitMQProducer = rabitMQProducer;
         }
 
         [HttpGet]
@@ -30,6 +33,8 @@ namespace IAFLogistic_DemandManagementService.Controllers
             if (result.Id == 0)
                 return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
 
+            _rabitMQProducer.SendMessage(item);
+            
             return Ok(result);
         }
 
